@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+	<title>Sample Quiz</title>
+
+</head>
+
+<body>
+	<div class="banner group">
+		<div class="banner-sections">
+			<p><strong>Username:</strong> Nick Woodland</p>
+			<p>Total Points Accrued: <span id="points"></span></p>
+		</div>
+		<div class="banner-sections">
+			<img src="img/oh_icon.gif" height="50">
+		</div>
+	</div>
+
+	<div class="wrapper group">
+		<div class="header group">
+			<h1 class="headerGroup1">SAMPLE QUIZ - Naming Standards</h1>
+			<h2 class="headerGroup2"id="qNum">Quiz Question <span id="currentQuestionNum"></span> of <span id="numOfQuestions"></span></h2>
+		</div>
+
+		<div class="sidebar group">
+			<div class="category">
+				<p>Category for this Quiz:</p>
+				<h3>NAMING</h3>
+			</div>
+			<div class="counterRightHolder">
+				<p><span id="counterRight"></span> Correct</p>
+			</div>
+			<div class="counterWrongHolder">
+				<p><span id="counterWrong"></span> Wrong</p>
+			</div>
+			<h3>More info on Naming</h3>
+			<ul>
+				<li><a href="#">One Pager</a></li>
+				<li><a href="#">Ops Hub Site</a></li>
+				<li><a href="#">D&amp;A Rules</a></li>
+				<li><a href="#">More Quizzes</a></li>
+			</ul>
+		</div>
+
+		<!-- ========== QUESTION 1 BELOW ========== -->
+		<div  id="first" class="mainContent group">
+			<div class="question-text">
+				<p>What are the two name status options you must select when adding a new name?</p>
+			</div>
+			<div class="questionChoices">
+				<div class="option correct">Common &amp; Explicatable</div>
+				<div class="option">Common &amp; Postal</div>
+				<div class="option">Postal &amp; Stale</div>
+				<div class="option">Vanity &amp; Stale</div>
+				<button class="submitButton">SUBMIT</button>
+				<button class="nextButton">NEXT</button>
+			</div>
+		</div>
+	
+		<!-- ========== QUESTION 2 BELOW ========== -->
+		<div class="mainContent group">
+			<div class="question-text">
+				<p>What are the two name status options you must select when adding a new name?</p>
+			</div>
+			<div class="questionChoices">
+				<div class="option">Child Element Ba</div>
+				<div class="option correct">Child Element Bb</div>
+				<div class="option">Child Element Bc</div>
+				<div class="option">Child Element Bd</div>
+				<button class="submitButton">SUBMIT</button>
+				<button class="nextButton">NEXT</button>
+			</div>
+		</div>
+	
+		<!-- ========== QUESTION 3 BELOW ========== -->
+		<div class="mainContent group">
+			<div class="question-text">
+				<p>What are the two name status options you must select when adding a new name?</p>
+			</div>
+			<div class="questionChoices">
+				<div class="option">Child Element Ca</div>
+				<div class="option">Child Element Cb</div>
+				<div class="option correct">Child Element Cc</div>
+				<div class="option">Child Element Cd</div>
+				<button class="submitButton">SUBMIT</button>
+				<button class="nextButton">NEXT</button>
+			</div>
+		</div>
+	
+		<!-- ========== QUESTION 4 BELOW ========== -->
+		<div class="mainContent group">
+			<div class="question-text">
+				<p>What are the two name status options you must select when adding a new name?</p>
+			</div>
+			<div class="questionChoices">
+				<div class="option">Child Element Da</div>
+				<div class="option">Child Element Db</div>
+				<div class="option">Child Element Dc</div>
+				<div class="option correct">Child Element Dd</div>
+				<button class="submitButton">SUBMIT</button>
+				<button class="nextButton" id="done">DONE</button>
+			</div>
+		</div>
+
+		<!-- ========== COMPLETION MESSAGE BELOW ========== -->
+		<div class="mainContent group">
+			<div class="question-number">
+				<h3>- FINISHED -</h3>
+			</div>
+			<div class="question-text">
+				<p id="completeMessage">You have completed this quiz.</p>
+			</div>
+			<div class="questionChoices">
+				<button class="retake">RETAKE THIS QUIZ</button>
+				<div class="option"></div>
+			</div>
+		</div>
+
+	</div>
+
+	<script src="js/jquery-1.11.1.min.js."></script>
+	<script src="js/quiz.js"></script>
+
+</body>
+</html>

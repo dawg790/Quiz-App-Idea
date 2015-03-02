@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+	<title>jQuery Test</title>
+
+	<style>
+		.container {
+			width: 65%;
+			margin: 100px auto;
+		}
+		.parent {
+			background: #eee;
+			padding: 10px;
+			margin-bottom: 25px;
+		}
+		.child {
+			padding: 20px;
+			margin-bottom: 15px;
+			width: 100%;
+			background: #003366;
+			color: #fff;
+		}
+		.child:hover {
+			opacity: .8;
+			cursor: pointer;
+		}
+		.chosen {
+			background: lightgreen;
+		}
+		.message {
+			padding: 10px;
+			color: #fff;
+			font-weight: bold;
+		}
+		.pass {
+			background: green;
+		}
+		.fail {
+			background: red;
+		}
+
+	</style>
+
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="parent" id="first">Parent Element A
+			<div class="child correct">Child Element Aa</div>
+			<div class="child">Child Element Ab</div>
+			<div class="child">Child Element Ac</div>
+			<div class="child">Child Element Ad</div>
+			<p class="message"></p>
+			<button class="submitButton">SUBMIT</button>
+			<button class="nextButton">NEXT</button>
+		</div>
+	
+		<div class="parent">Parent Element B
+			<div class="child">Child Element Ba</div>
+			<div class="child correct">Child Element Bb</div>
+			<div class="child">Child Element Bc</div>
+			<div class="child">Child Element Bd</div>
+			<p class="message"></p>
+			<button class="submitButton">SUBMIT</button>
+			<button class="nextButton">NEXT</button>
+		</div>
+	
+		<div class="parent">Parent Element C
+			<div class="child">Child Element Ca</div>
+			<div class="child">Child Element Cb</div>
+			<div class="child correct">Child Element Cc</div>
+			<div class="child">Child Element Cd</div>
+			<p class="message"></p>
+			<button class="submitButton">SUBMIT</button>
+			<button class="nextButton">NEXT</button>
+		</div>
+	
+		<div class="parent">Parent Element D
+			<div class="child">Child Element Da</div>
+			<div class="child">Child Element Db</div>
+			<div class="child">Child Element Dc</div>
+			<div class="child correct">Child Element Dd</div>
+			<p class="message"></p>
+			<button class="submitButton">SUBMIT</button>
+			<button class="nextButton">DONE</button>
+		</div>
+
+		<div class="parent">
+			<div class="child">THANK YOU FOR TAKING THIS QUIZ</div>
+		</div>
+
+	</div>
+
+
+	<script src="js/jquery-1.11.1.min.js."></script>
+
+	<script>
+		// Hides all parents - QUESTIONS - on load except the first one. 
+		// Hides all NEXT buttons on load
+		$('.parent:not("#first")').hide();
+		$('.nextButton').hide();
+
+		// Sets Page Counters
+		var $numberCorrect = 0;
+		var $numberWrong = 0;
+
+		// Pass or Fail text
+		var $passText = "Great Job! Please click NEXT below.";
+		var $failText = "Sorry, that is incorrect! Please click NEXT below.";
+
+		// Adds highlight to ANSWER CHOICE (also adds .chosen class)
+		$('.child').on('click', function() {
+			$('.child').removeClass('chosen');
+			$(this).addClass('chosen');
+		});
+
+		// CLICK SUBMIT - CHECK ANSWER
+		$('.submitButton').on('click', function() {
+			// Find Element that has Classes: Correct & Chosen.
+			// Set Counter for correctly chosen answers
+			var parent = $(this).parent();
+			var correctAnswer;
+			parent.children().each(function() {
+				if ($(this).hasClass('chosen') && $(this).hasClass('correct')) {
+					correctAnswer = true;
+				}
+			});
+			var $note = parent.children('p');
+			// Add Pass or Fail Messages & Increment Page Counters (# Correct/# Incorrect)
+			// Find correct answer - adds correct background to choice.
+			if (correctAnswer) {
+				$('.chosen').css("backgroundColor", "green");
+				$note.addClass('pass').html($passText);
+				$numberCorrect++;
+			} else {
+				$('.chosen').css("backgroundColor", "red");
+				$note.addClass('fail').html($failText);
+				$numberWrong++;
+			}
+			// Dim question choices after submit
+			parent.children('div').css("opacity", ".4");
+			// Animation and effects to hide the Submit Button and show the Next button.
+			$(this).animate({ opacity: '0'}, 350, function() {
+				$(this).hide();
+			});
+			$(this).next().show();
+		});
+
+		// CLICK NEXT
+		// Whichever button you press, the immediate sibling of the parent is hidden.
+		$('.nextButton').on('click', function() {
+			$(this).parent().hide();
+			$(this).parent().next().slideDown(700);
+		});
+
+
+	</script>
+
+</body>
+</html>

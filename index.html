@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+	<title>Sample QUIZ</title>
+
+</head>
+
+<body>
+
+	<div id="wrapper1" class="wrapper">
+		<div class="header">
+			<h1>SAMPLE QUIZ - Naming Standards</h1>
+		</div>
+
+		<div class="sidebar group">
+			<div class="category">
+				<p>Category for this Quiz:</p>
+				<h3>NAMING</h3>
+			</div>
+			<div id="pass" class="counter-right">
+				<p><span id="counterRight"></span> Correct</p>
+			</div>
+			<div id="fail" class="counter-wrong">
+				<p><span id="counterWrong"></span> Wrong</p>
+			</div>
+			<h3>More info on Naming</h3>
+			<ul>
+				<li><a href="#">One Pager</a></li>
+				<li><a href="#">Ops Hub Site</a></li>
+				<li><a href="#">More Quizzes</a></li>
+			</ul>
+		</div>
+
+		<!-- ========== FIRST QUESTION ========== -->
+		<div id="q1" class="main-content group">
+			<div class="question-number">
+				<h3>- Question #1 -</h3>
+			</div>
+			<div class="question-text">
+				<p>What are the two name status options you must select when adding a new name?</p>
+			</div>
+			<div id="message1" class="answer-message"></div>
+			<div id="choices1" class="question-choices">
+				<div class="option1">Common &amp; Explicatable</div>
+				<div class="option2">Postal &amp; Common</div>
+				<div class="option3">Stale &amp; Explicatable</div>
+				<div class="option4">Postal &amp; Stale</div>
+			</div>
+			<div class="submit">
+				<input type="button" id="b1" value="SUBMIT">
+				<input type="button" id="next1" value="NEXT">
+			</div>
+		</div>
+
+		<!-- ========== SECOND QUESTION ========== -->
+		<div id="q2" class="main-content group">
+			<div class="question-number">
+				<h3>- Question #2 -</h3>
+			</div>
+			<div class="question-text">
+				<p>What would you press after adding a name to the database?</p>
+			</div>
+			<div id="message2" class="answer-message"></div>
+			<div id="choices2" class="question-choices">
+				<div class="option1">Submit</div>
+				<div class="option2">Add</div>
+				<div class="option3">Checkmark</div>
+				<div class="option4">Save As</div>
+			</div>
+			<div class="submit">
+				<input type="button" id="b2" value="SUBMIT">
+				<input type="button" id="next2" value="NEXT">
+			</div>
+		</div>
+
+	</div>
+
+	<div class="footer">
+		<p>&copy; Operations Hub - 2014</p>
+	</div>
+
+	<script>
+
+	// var counterRight = 0;
+	// var counterWrong = 0;
+	// var messageElt = document.getElementById('message1');
+	// var q1 = document.getElementById('q1');
+	// var q2 = document.getElementById('q2');
+	// var next1 = document.getElementById('next1');
+	// var parent = document.getElementById('choices1');
+
+	// // ======= Hides 2nd Question & next button on load
+	// q2.classList.add('hide');
+	// next1.classList.add('hide');
+	
+	// // ======= Then shows 2nd Question when Submit is hit in 1st Question
+	// function hideThisQ(e) {
+	// 	e.preventDefault();
+	// 	q1.classList.add('hide');
+	// 	q2.classList.remove('hide');
+	// }
+
+	// // ======= Looks at Classes on the Answer choices, if Chosen and the right Option are containe
+	// // ======= User is alerted as to right or wrong
+	// // ======= Counters are used to populate the counters on the Quiz
+	
+	// function checkAnswer() {
+	// 	var counterRightHolder = document.getElementById('counterRight');
+	// 	var counterWrongHolder = document.getElementById('counterWrong');
+	// 	for (var i = 0; i < parent.children.length; i++) {
+	// 	 	if (parent.children[i].classList.contains('chosen', 'option1')) {
+	// 	 		correctAnswer();
+	// 	 		break;
+	// 	 	} else {
+	// 	 		incorrectAnswer();
+	// 	 		break;
+	// 	 	}
+	// 	 }
+	// }
+
+	// function correctAnswer() {
+	// 	var messagePass = "Great Job! Please click NEXT for the next question.";
+	// 	var counterPassHolder = document.getElementById('pass');
+	// 	b1.classList.add('hide');
+	// 	next1.classList.remove('hide');
+	// 	parent.classList.add('nextDim');
+	// 	messageElt.innerHTML = messagePass;
+	// 	messageElt.classList.add('pass');
+	// 	counterPassHolder.classList.add('pass');
+	// 	counterRight++;
+	// 	counterRightHolder.innerHTML = counterRight;
+	// }
+
+	// function incorrectAnswer() {
+	// 	var messageFail = "Sorry, that is the wrong choice. Please click NEXT for the next question.";
+	// 	var counterFailHolder = document.getElementById('fail');
+	// 	b1.classList.add('hide');
+	// 	next1.classList.remove('hide');
+	// 	parent.classList.add('nextDim');
+	// 	messageElt.innerHTML = messageFail;
+	// 	messageElt.classList.add('fail');
+	// 	counterFailHolder.classList.add('fail');
+	// 	counterWrong++;
+	// 	counterWrongHolder.innerHTML = counterWrong;
+	// }
+
+	// var b1 = document.getElementById('b1');
+	// b1.onclick = checkAnswer;
+
+	// next1.onclick = hideThisQ;
+
+
+ 	// 	// ======= Uses Event bubbling to find current target in the Choices
+ 	// 	// ======= Toggles the Chosen class, removes Chosen from any other choices using a For loop
+ 	// 	// ======= Stops event propogation from continuing up the DOM past the parent element
+	// function highlightChoice(e) {
+	// 	if (e.target !== e.currentTarget) {
+	// 		var clickedItem = e.target;
+	// 		for (var i = 0; i < parent.children.length; i++) {
+	// 			parent.children[i].classList.remove('chosen');
+	// 		}
+	// 		clickedItem.classList.toggle('chosen');
+	// 	}
+	// 	e.stopPropagation();
+	// }
+
+	// parent.onclick = highlightChoice;
+
+	</script>
+
+</body>
+
+</html>

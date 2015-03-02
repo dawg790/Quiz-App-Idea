@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Test Quiz</title>
+
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/normalize.css">
+
+	<style>
+		body {
+			background: #ddd;
+		}
+
+		.wrapper {
+			width: 60%;
+			margin: 50px auto;
+		}
+
+		#q3 {
+			border: none;
+			background: #ddd;
+			border-bottom: 1px solid black;
+		}
+
+		#q3:focus {
+			background: #ddd;
+			outline: 0;
+		}
+
+		.pass {
+			background: green;
+		}
+
+		.fail {
+			background: red;
+		}
+
+	</style>
+
+</head>
+
+<body>
+
+	<div class="wrapper">
+		<h1>Test Quiz</h1><hr>
+		<h3>Question 1</h3>
+		<p>What is 2 + 2?</p>
+		<input type="text" id="q1" value="" placeholder="Type answer here">
+		<input type="button" id="submit1" value="SUBMIT">
+		<p id="message1"></p>
+
+		<h3>Question 2</h3>
+		<p>Denver is the capital of Colorado.</p>
+		<label>TRUE</label><input id="true" type="checkbox">
+		<label>FALSE</label><input id="false" type="checkbox">
+		<input type="button" id="submit2" value="SUBMIT">
+		<p id="message2"></p>
+
+		<h3>Question 3</h3>
+		<p>JavaScript is a programming <input type="text" id="q3" value=""></p>
+		<input type="button" id="submit3" value="SUBMIT">
+		<p id="message3"></p>
+
+	</div>
+
+
+	<script src="js/quiz.js"></script>
+
+</body>
+
+</html>
