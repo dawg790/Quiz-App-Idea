@@ -2,6 +2,8 @@ Online Quiz idea
 
 Need to factor in a DB of some kind - maybe utilize Mongo DB for this project
 
+Also could utilize Sass for this project
+
 Re-design the layout a bit so it doesn't look so much like the Treehouse quizes
 Make it Mobile friendly
 
